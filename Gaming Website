@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PlayZone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🎯 Welcome to PlayZone</h1>
+    <input type="text" id="search" placeholder="Search for a game...">
+  </header>
+
+  <section id="game-list">
+    <a href="games/tetris.html">🧱 Tetris</a>
+    <a href="games/flappy.html">🐦 Flappy Bird</a>
+  </section>
+
+  <footer>
+    <p>© 2025 PlayZone</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+body {
+  background: #1e1e2f;
+  color: #ffffff;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #292949;
+  padding: 20px;
+}
+
+input {
+  padding: 10px;
+  width: 80%;
+  max-width: 400px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+#game-list {
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+const input = document.getElementById('search');
+const links = document.querySelectorAll('#game-list a');
+
+input.addEventListener('input', () => {
+  const search = input.value.toLowerCase();
+  links.forEach(link => {
+    link.style.display = link.textContent.toLowerCase().includes(search) ? 'block' : 'none';
+  });
+});
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tetris</title>
+</head>
+<body style="text-align: center; background: #111; color: white;">
+  <h2>🧱 Tetris</h2>
+  <p>Your Tetris game goes here</p>
+  <a href="../index.html" style="color: lightblue;">← Back</a>
+</body>
+</html>
+
+#game-list a {
+  background: #3a3a5a;
+  padding: 15px 20px;
+  margin: 10px;
+  width: 200px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  transition: background 0.3s;
+}
+
+#game-list a:hover {
+  background: #5050a0;
+}
